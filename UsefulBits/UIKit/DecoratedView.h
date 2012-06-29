@@ -28,8 +28,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import <UsefulBits/ViewDecorators.h>
-#import <UsefulBits/UIView+Decorators.h>
+#import "ViewDecorators.h"
+#import "UIView+Decorators.h"
 
 @interface DecoratedView : UIView
 {
