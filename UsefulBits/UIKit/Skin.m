@@ -195,7 +195,14 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
     if ([value isKindOfClass:[NSString class]] && !([value hasPrefix:kReferencePrefix] || [value hasPrefix:kHexPrefix]))
     {
       NSString *path = expand_path(bundle, section, part, value);
-      [expanded setObject:path forKey:key];
+	  if(!path)
+	  {
+		  DLog(@"Skipping.. image not found");
+		  DLog(@"bundle %@ section %@ part %@ value %@",bundle, section, part, value);
+	  }
+	  else
+		  [expanded setObject:path forKey:key];
+		
     }
     else if ([value isKindOfClass:[NSDictionary class]])
     {
