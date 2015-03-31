@@ -14,10 +14,10 @@
 {
   NSScanner *scanner = [NSScanner scannerWithString:hexString];
   
-  NSUInteger value;
+  unsigned int value;
   if ([scanner scanHexInt:&value]) 
   {
-    return [NSNumber numberWithInteger:value]; 
+    return [NSNumber numberWithInteger:(int)value];
   }
   
   return nil;

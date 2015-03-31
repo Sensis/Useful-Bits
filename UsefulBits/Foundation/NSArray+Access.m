@@ -47,10 +47,12 @@
 
 - (NSArray *)trunk;
 {
+    
+    
   return [self take:([self count] - 1)];
 }
 
-- (NSArray *)take:(NSInteger)count;
+- (NSArray *)take:(NSUInteger)count;
 {
 	return [self subarrayWithRange:NSMakeRange(0, [self count] >= count ? count : [self count])];
 }

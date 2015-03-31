@@ -63,7 +63,7 @@
     color = [[NSNumber integerWithHexString:[hexString substringWithRange:NSMakeRange(2, 6)]] unsignedIntegerValue];
   }
   
-  return alpha < 255 ? [UIColor colorWithHex:color alpha:(alpha / 255.0f)] : [UIColor colorWithHex:color];
+  return alpha < 255 ? [UIColor colorWithHex:(NSInteger)color alpha:(alpha / 255.0f)] : [UIColor colorWithHex:(NSInteger)color];
 }
 
 
