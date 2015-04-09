@@ -197,8 +197,8 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
       NSString *path = expand_path(bundle, section, part, value);
 	  if(!path)
 	  {
-		  DLog(@"Skipping.. image not found");
-		  DLog(@"bundle %@ section %@ part %@ value %@",bundle, section, part, value);
+		  NSLog(@"Skipping.. image not found");
+		  NSLog(@"bundle %@ section %@ part %@ value %@",bundle, section, part, value);
 	  }
 	  else
 		  [expanded setObject:path forKey:key];

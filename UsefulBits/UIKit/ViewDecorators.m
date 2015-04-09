@@ -78,15 +78,15 @@ ViewDecorator ImageNamedForOrintationDecorator(NSString *name)
 ViewDecorator BottomKeylineDecorator(UIColor *color)
 {
   return [[^ (UIView *view, CGRect dirtyRect, CGContextRef context) {
-    CGContextSetShadowWithColor(context, CGSizeMake(0., 1.), 0., [[UIColor colorWithWhite:1. alpha:.72] CGColor]);
+    CGContextSetShadowWithColor(context, CGSizeMake(0., 1.), 0., [[UIColor colorWithWhite:1. alpha:(CGFloat).72] CGColor]);
     CGContextSetAllowsAntialiasing(context, NO);
     CGContextSetLineWidth(context, 1.);
     CGContextSetStrokeColorWithColor(context, [color CGColor]);
     
-    CGFloat bottom = [view height] - 1.5;
+    CGFloat bottom = [view height] - (CGFloat)1.5;
     
     CGContextMoveToPoint(context, 3., bottom);
-    CGContextAddLineToPoint(context, [view width] -3., bottom);
+    CGContextAddLineToPoint(context, [view width] - (CGFloat)3., bottom);
     CGContextStrokePath(context);
 
   } copy] autorelease];
