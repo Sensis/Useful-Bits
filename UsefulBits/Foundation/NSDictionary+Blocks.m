@@ -1,4 +1,4 @@
-//
+ //
 //  NSDictionary+Blocks.m
 //  UsefulBits
 //
@@ -27,6 +27,18 @@
   
   return [[result copy] autorelease];
 }
+
+- (id)reduce:(id (^)(id current, id key, id value))block initial:(id)initial;
+{
+    __block id result = initial;
+
+    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        result = block(result, key, obj);
+    }];
+
+    return result;
+}
+
 
 - (void)withValueForKey:(id)key meetingCondition:(BOOL (^) (id))condition do:(void (^) (id))action;
 {

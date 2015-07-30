@@ -11,6 +11,7 @@
 
 - (void)each:(void (^) (id key, id value))action;
 - (NSArray *)map:(id (^) (id key, id value))action;
+- (id)reduce:(id (^)(id current, id key, id value))block initial:(id)initial;
               
 - (void)withValueForKey:(id)key meetingCondition:(BOOL (^) (id value))condition do:(void (^) (id value))action;
 
